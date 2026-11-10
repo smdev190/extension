@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="color-scheme" content="light">
+<title>Gemini Injector By ishowfacts</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    width: 370px; margin: 0; padding: 20px 18px 14px;
+    font: 13px/1.6 -apple-system, "Segoe UI", Roboto, "Microsoft YaHei", sans-serif;
+    color: #28354a; background: linear-gradient(150deg, #eef3ff 0, #f7f9fc 180px);
+  }
+  .head { display: flex; align-items: center; gap: 11px; margin-bottom: 16px; }
+  .logo {
+    width: 46px; height: 46px; border-radius: 12px; object-fit: cover; flex-shrink: 0;
+    box-shadow: 0 4px 12px #263b6430; border: 1px solid #ffffffb0;
+  }
+  h1 { font-size: 17px; margin: 0 0 3px; font-weight: 700; letter-spacing: -.4px; color: #1d2c47; }
+  .sub { font-size: 11px; color: #69778d; }
+  .box {
+    border: 1px solid #e2e8f2; border-radius: 14px; padding: 12px; margin-bottom: 12px;
+    background: #fff; box-shadow: 0 4px 16px #263b6410;
+  }
+  .lbl { font-size: 11px; color: #69778d; margin: 0 2px 10px; }
+  label.row {
+    display: flex; align-items: center; gap: 10px; padding: 9px 10px;
+    border: 1px solid transparent; border-radius: 9px; cursor: pointer;
+    transition: background .15s, border-color .15s;
+  }
+  label.row + label.row { margin-top: 3px; }
+  label.row:hover { background: #f5f7fc; }
+  label.row:has(input:checked) { background: #edf3ff; border-color: #cddcff; color: #2457bd; }
+  label.row:has(input:focus-visible) { outline: 2px solid #507ce0; outline-offset: 2px; }
+  label.row input { margin: 0; width: 15px; height: 15px; accent-color: #416fdb; flex-shrink: 0; }
+  .t { flex: 1; }
+  .tag { font-size: 10px; line-height: 20px; padding: 0 7px; border-radius: 6px; color: #718096; background: #f0f3f8; }
+  label.row:has(input:checked) .tag { color: #2457bd; background: #dce8ff; }
+  #state { font-size: 11.5px; padding: 10px 12px; border-radius: 10px; background: #f1f4f8; border: 1px solid #e2e8f0; }
+  #state.ok { background: #edf9f2; border-color: #ccebd9; color: #24744c; }
+  #state.warn { background: #fffaed; border-color: #f0e3bc; color: #886821; }
+  ol { margin: 14px 0 0; padding-left: 23px; font-size: 11.5px; color: #647187; }
+  ol li { margin: 5px 0; padding-left: 2px; }
+  ol li::marker { color: #8b9bb3; font-weight: 600; }
+  ol b { font-weight: 600; color: #3d4d66; }
+  .foot { margin-top: 14px; padding-top: 10px; border-top: 1px solid #e2e8f0; font-size: 10.5px; color: #7c899e; display: flex; justify-content: space-between; }
+  .foot a { color: #5674af; text-decoration: none; border-radius: 3px; }
+  .foot a:hover { color: #2457bd; text-decoration: underline; }
+  .foot a:focus-visible { outline: 2px solid #507ce0; outline-offset: 3px; }
+  @media (prefers-reduced-motion: reduce) { label.row { transition: none; } }
+</style>
+</head>
+<body>
+  <div class="head">
+    <img class="logo" src="icons/128.png" alt="ishowfacts logo">
+    <div>
+      <h1>Gemini Injector By ishowfacts</h1>
+      <div class="sub">ishowfacts Edition · Sign in to the target account (U.S. region), then select a layer</div>
+    </div>
+  </div>
+
+  <div class="box">
+    <div class="lbl">Injection layer (takes effect automatically; refresh the page once)</div>
+    <label class="row"><input type="radio" name="layer" value="off"><span class="t">Disable injection</span></label>
+    <label class="row"><input type="radio" name="layer" value="12m"><span class="t">Layer 1 · 12 months</span><span class="tag">First-time</span></label>
+    <label class="row"><input type="radio" name="layer" value="6m_ss"><span class="t">Layer 2 · 6 months (SS)</span><span class="tag">Stack</span></label>
+    <label class="row"><input type="radio" name="layer" value="6m"><span class="t">Layer 3 · 6 months</span><span class="tag">Stack</span></label>
+    <label class="row"><input type="radio" name="layer" value="6m_2"><span class="t">Backup · 6 months</span><span class="tag">Alternate</span></label>
+  </div>
+
+  <div id="state" class="warn" role="status" aria-live="polite">No active injection detected on this page</div>
+
+  <ol>
+    <li>Open <b>one.google.com/plans</b> and confirm the target email is shown at the top left</li>
+    <li>Select a layer above → refresh the page → confirm “Injection active” appears at the bottom right</li>
+    <li>Click <b>Get discount</b> on the AI Pro card to open the Play checkout window</li>
+    <li>Check the banner at the top: <b>green = free trial</b>; do not proceed if it is red</li>
+    <li>Add a card (U.S. tax-free ZIP code 97201) → verify the total is $0.00 → subscribe</li>
+    <li>Stack the next layer: return here, switch layers, refresh, and click again</li>
+    <li>When finished, go to play.google.com and turn off automatic renewal</li>
+  </ol>
+
+  <div class="foot"><span>ishowfacts Edition</span><a href="https://whatsapp.com/channel/0029Vb6SnlJ65yD3x7ddpA3x" target="_blank" rel="noopener noreferrer">ishowfacts channel</a></div>
+  <script src="popup.js"></script>
+</body>
+</html>
